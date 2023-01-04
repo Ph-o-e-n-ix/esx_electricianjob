@@ -1,1 +1,8 @@
 # esx_electricianjob
+
+Hey, This is a Script for an Electrician Job, that a Player allows to take a custom Car, go out with it and do some Repairds. 
+
+The Target Locations are based on Coordinates, so you can add much as you want. Its taking the Locations randomly everytime you 
+repaired one Location.
+
+So you drive around and you repairing stuff like, as example Phone Booth or a Power Box
