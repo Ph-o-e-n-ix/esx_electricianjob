@@ -10,3 +10,11 @@ The Target Locations are based on Coordinates, so you can add much as you want. 
 repaired one Location.
 
 So you drive around and you repairing stuff like, as example Phone Booth or a Power Box
+
+
+Also works with the Minigame 
+
+https://github.com/utkuali/datacrack
+
+![image](https://user-images.githubusercontent.com/119653707/210660101-df6f3ea1-cb44-4805-b7b1-f17e5eb6fcab.png)
+
