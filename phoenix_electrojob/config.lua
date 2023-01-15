@@ -123,4 +123,29 @@ Translation = {
 		['toolkit_needed'] = 'You need your Toolkit',
     },
 
+	['es'] = {
+        ['start_mission_text'] = 'Presiona ~g~[E]~s~ para empezar el trabajo',
+        ['cancel_mission_text'] = 'Presiona ~r~[G]~s~ para cancelar el trabajo',
+        ['already_startet_mission'] = 'Usted ya ha empezado el trabajo',
+		['started_mission'] = 'Has empezado el trabajo',
+        ['canceled_mission'] = 'Has cancelado el trabajo',
+        ['car_blipname'] = 'Coche',
+		['target_blip'] = 'Objetivo',
+		['blipname'] = 'Trabajo de electricista',
+		['take_toolkit'] = 'Presiona ~g~[E]~s~ para equipar el kit de herramientas',
+        ['press_to_start_fixing'] = 'Presiona ~INPUT_DETONATE~ para empezar',
+        ['successfully_repaired'] = 'Has reparado exitosamente el dispositivo',
+
+		--Picture Notify{
+		['img'] = 'CHAR_CHEF',
+		['message'] = 'Has recivido ~g~'..Config.Reward..'$~s~. ¡Buen trabajo!',
+		['title'] = 'Chef',
+		['subtitle'] = 'Recompensa recivida',
+		--}
+
+		['failed_minigame'] = 'Diagnóstico fallido. Reinicio requerido.',
+		['vehicle_not_in_range'] = 'Tu vehículo no está en el rango',
+		['toolkit_needed'] = 'Necesitas tu kit de herramientas',
+    },
+
 }
