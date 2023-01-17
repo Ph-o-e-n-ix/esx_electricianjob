@@ -146,6 +146,6 @@ Translation = {
 	['failed_minigame'] = 'Diagnóstico fallido. Reinicio requerido.',
 	['vehicle_not_in_range'] = 'Tu vehículo no está en el rango',
 	['toolkit_needed'] = 'Necesitas tu kit de herramientas',
-    },
+    }
 
 }
