@@ -57,9 +57,10 @@ Citizen.CreateThread(function()
 						end 
 						vehicle = CreateVehicle(car, v.spawncoords.x, v.spawncoords.y, v.spawncoords.z, v.carheading, true, false)
 						SetVehicleLivery(vehicle, 10)
-						local getFuel = exports['LegacyFuel']:GetFuel(vehicle)
+						SetVehicleDirtLevel(vehicle, 0.0)
+						--[[local getFuel = exports['LegacyFuel']:GetFuel(vehicle)
 						local fuelLevel = getFuel 
-						exports['LegacyFuel']:SetFuel(vehicle, 100)
+						exports['LegacyFuel']:SetFuel(vehicle, 100)]]
 						--SetPedIntoVehicle(player, vehicle, -1) --uncomment to Spawn the Player into the Vehicle
 						SetEntityAsNoLongerNeeded(vehicle)
 						SetVehicleNumberPlateText(vehicle, Config.CarPlateName)
@@ -149,31 +150,56 @@ Citizen.CreateThread(function()
 															FreezeEntityPosition(PlayerPedId(), true)
 															SetEntityCoords(PlayerPedId(),results.x, results.y, results.z -1.0, true, false, false, false)
 															SetEntityHeading(playerPed, results.h)
+															DeleteEntity(toolkitprop)
 															if Config.UseMiniGame then
-																TriggerEvent("datacrack:start", 3, function(output)
-																	if output == true then
-																		DeleteEntity(toolkitprop)
-																		Citizen.Wait(500)
-																		TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-																		Citizen.Wait(Config.Waittime * 1000)
-																		ClearPedTasks(playerPed)
-																		Config.MSG(Translation[Config.Locale]['successfully_repaired'])
-																		RemoveBlip(missionblip)
-																		step1 = false
-																		busy3 = false
-																		step5 = false
-																		blipactive = false
-																		FreezeEntityPosition(PlayerPedId(), false)
-																		Citizen.Wait(1500)
-																		TriggerServerEvent("electric:getmoney")
-																		showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
-																		shownotify2 = false
-																	else
-																		Config.MSG(Translation[Config.Locale]['failed_minigame'])
-																	end
-																end)
+																local luck = math.random(100)
+																if luck > 50 then 
+																	TriggerEvent("Mx::StartMinigameElectricCircuit", '50%', '100%', '0.8', '30vmin', '1.ogg', function(mist)
+																		if Callback == mist then
+																			--Citizen.Wait(5000)
+																			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_WELDING', 0, true)
+																			Citizen.Wait(Config.Waittime * 1000)
+																			ClearPedTasks(playerPed)
+																			Config.MSG(Translation[Config.Locale]['successfully_repaired'])
+																			RemoveBlip(missionblip)
+																			step1 = false
+																			busy3 = false
+																			step5 = false
+																			blipactive = false
+																			FreezeEntityPosition(PlayerPedId(), false)
+																			Citizen.Wait(1500)
+																			TriggerServerEvent("electric:getmoney")
+																			showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
+																			shownotify2 = false
+																		else
+																			Config.MSG(Translation[Config.Locale]['failed_minigame'])
+																		end
+																	end)
+																else 
+																	TriggerEvent("datacrack:start", 3, function(output)
+																		if output == true then
+																			DeleteEntity(toolkitprop)
+																			Citizen.Wait(500)
+																			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+																			Citizen.Wait(Config.Waittime * 1000)
+																			ClearPedTasks(playerPed)
+																			Config.MSG(Translation[Config.Locale]['successfully_repaired'])
+																			RemoveBlip(missionblip)
+																			step1 = false
+																			busy3 = false
+																			step5 = false
+																			blipactive = false
+																			FreezeEntityPosition(PlayerPedId(), false)
+																			Citizen.Wait(1500)
+																			TriggerServerEvent("electric:getmoney")
+																			showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
+																			shownotify2 = false
+																		else
+																			Config.MSG(Translation[Config.Locale]['failed_minigame'])
+																		end
+																	end)
+																end
 															else 
-																DeleteEntity(toolkitprop)
 																Citizen.Wait(500)
 																TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 																Citizen.Wait(Config.Waittime * 1000)
@@ -238,6 +264,7 @@ Citizen.CreateThread(function()
 		SetBlipSprite(kartenblip, 620)
 		SetBlipScale(kartenblip, 0.8)
 		SetBlipColour(kartenblip, 3)
+		SetBlipAsShortRange(kartenblip, true)
 		BeginTextCommandSetBlipName("STRING")
 		AddTextComponentString(Translation[Config.Locale]['blipname'])
 		EndTextCommandSetBlipName(kartenblip)

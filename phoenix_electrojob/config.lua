@@ -44,8 +44,8 @@ Config.StartCoords = {
 }
 
 Config.MSG = function(msg)
-    --ESX.ShowNotification(msg) 
-    exports['okokNotify']:Alert("Electrician Job", msg, 3000, 'info') 
+    ESX.ShowNotification(msg) 
+    --exports['okokNotify']:Alert("Electrician Job", msg, 3000, 'info') 
     --If you use okokNotify, uncomment this or use your own Notify Script
 end
 
@@ -70,6 +70,18 @@ Config.MissionCoords = {
 	{  x = 679.7724, y = -32.8730, 	z = 82.9715, h = 42.1984 },
 	{  x = 891.1613, y = 41.8322, 	z = 78.7264, h = 233.6204 },
 	{  x = 857.2255, y = -140.1125, z = 78.7231, h = 60.5349 },
+	{  x = 147.6695, y = -1035.4513, z = 29.3431, h = 164.4883 },
+	{  x = 295.5568, y = -896.0820, z = 29.2120, h = 252.0555 },
+	{  x = 214.1687, y = -853.6418, z = 30.3870, h = 339.4955 },
+	{  x = 301.1392, y = -1269.1143, z = 29.5181, h = 6.5780 },
+	{  x = -609.5130, y = -1091.6191, z = 22.3248, h = 132.9999 },
+	{  x = 875.4760, y = -2092.6594, z = 30.5137, h = 175.3683 },
+	{  x = -32.9868, y = -1106.1160, z = 27.2744, h = 253.7646 },
+	{  x = 745.1517, y = -769.7960, z = 26.4455, h = 65.3190 }, 
+	{  x = -544.8131, y = -158.9713, z = 38.4763, h = 20.1898 },
+	{  x = -800.2009, y = -106.3099, z = 37.5652, h = 29.4009 },
+	{  x = -1231.0833, y = -327.7384, z = 37.4014, h = 26.7014 },
+	{  x = 244.2400, y = -726.9323, z = 44.6855, h = 69.6494 },
 }
 
 Translation = {
@@ -86,12 +98,11 @@ Translation = {
         ['press_to_start_fixing'] = 'Drücke ~INPUT_DETONATE~ um zu beginnen',
         ['successfully_repaired'] = 'Du hast das Gerät erfolgreich repariert',
 
-		--Picture Notify{
+		--Picture Notify
 		['img'] = 'CHAR_CHEF',
 		['message'] = 'Du hast ~g~'..Config.Reward..'$~s~ erhalten. Weiter so!',
 		['title'] = 'Chef',
 		['subtitle'] = 'Belohnung erhalten',
-		--}
 
 		['failed_minigame'] = 'Diagnose Fehlgeschlagen. Neustart erforderlich',
 		['vehicle_not_in_range'] = 'Dein Fahrzeug ist nicht in der Nähe',
@@ -116,7 +127,6 @@ Translation = {
 		['message'] = 'You received ~g~'..Config.Reward..'$~s~. Good Job!',
 		['title'] = 'Chef',
 		['subtitle'] = 'Received Reward',
-		--}
 
 		['failed_minigame'] = 'Diagnosis failed. Reboot required.',
 		['vehicle_not_in_range'] = 'Your Vehicle is not in Range',
@@ -127,25 +137,24 @@ Translation = {
         ['start_mission_text'] = 'Presiona ~g~[E]~s~ para empezar el trabajo',
         ['cancel_mission_text'] = 'Presiona ~r~[G]~s~ para cancelar el trabajo',
         ['already_startet_mission'] = 'Usted ya ha empezado el trabajo',
-	['started_mission'] = 'Has empezado el trabajo',
+		['started_mission'] = 'Has empezado el trabajo',
         ['canceled_mission'] = 'Has cancelado el trabajo',
         ['car_blipname'] = 'Coche',
-	['target_blip'] = 'Objetivo',
-	['blipname'] = 'Trabajo de electricista',
-	['take_toolkit'] = 'Presiona ~g~[E]~s~ para equipar el kit de herramientas',
+		['target_blip'] = 'Objetivo',
+		['blipname'] = 'Trabajo de electricista',
+		['take_toolkit'] = 'Presiona ~g~[E]~s~ para equipar el kit de herramientas',
         ['press_to_start_fixing'] = 'Presiona ~INPUT_DETONATE~ para empezar',
         ['successfully_repaired'] = 'Has reparado exitosamente el dispositivo',
 
-	--Picture Notify{
-	['img'] = 'CHAR_CHEF',
-	['message'] = 'Has recivido ~g~'..Config.Reward..'$~s~. ¡Buen trabajo!',
-	['title'] = 'Chef',
-	['subtitle'] = 'Recompensa recivida',
-	--}
+		--Picture Notify{
+		['img'] = 'CHAR_CHEF',
+		['message'] = 'Has recivido ~g~'..Config.Reward..'$~s~. ¡Buen trabajo!',
+		['title'] = 'Chef',
+		['subtitle'] = 'Recompensa recivida',
 
-	['failed_minigame'] = 'Diagnóstico fallido. Reinicio requerido.',
-	['vehicle_not_in_range'] = 'Tu vehículo no está en el rango',
-	['toolkit_needed'] = 'Necesitas tu kit de herramientas',
+		['failed_minigame'] = 'Diagnóstico fallido. Reinicio requerido.',
+		['vehicle_not_in_range'] = 'Tu vehículo no está en el rango',
+		['toolkit_needed'] = 'Necesitas tu kit de herramientas',
     }
 
 }
