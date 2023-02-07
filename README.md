@@ -11,10 +11,20 @@ repaired one Location.
 
 So you drive around and you repairing stuff like, as example Phone Booth or a Power Box
 
+**IMPORTANT**
+**If you use a Car like Burrito, you have to do some Changes. The Burrito has no Trunk, instead he have Back Rear Doors. So you have to go to**
 
-Also works with the Minigame 
+**client.lua Line 106-139**
 
-https://github.com/utkuali/datacrack
+![Screenshot_1](https://user-images.githubusercontent.com/119653707/217301453-7ff1addb-fc75-45bc-937f-88f843c0f900.png)
+
+https://docs.fivem.net/natives/?_0xFB71170B7E76ACBA
+
+Also works with the Minigames, but if you dont want to use them, you can deactivate it in the Config.
+You can also edit the Code for yourself but not for Releasing. Thanks
+
+https://forum.cfx.re/t/free-release-fix-wiring-standalone/4864403
+[https://github.com/utkuali/datacrack](https://forum.cfx.re/t/standalone-datacrack-hacking-mini-game/1066972)
 
 ![image](https://user-images.githubusercontent.com/119653707/210660101-df6f3ea1-cb44-4805-b7b1-f17e5eb6fcab.png)
 
