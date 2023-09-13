@@ -3,7 +3,7 @@
 ![Electrician (2)](https://user-images.githubusercontent.com/119653707/210658153-925288f2-dad6-4d57-b068-2e8e4007c088.png)
 
 
-[<img alt="alt_text" src="https://i.imgur.com/yRsZ96F.png" />](https://discord.gg/CUXK7CWx3P)
+[<img alt="alt_text" target="_blank" src="https://i.imgur.com/yRsZ96F.png" />](https://discord.gg/CUXK7CWx3P)
 
 Hey, This is a Script for an Electrician Job, that a Player allows to take a custom Car, go out with it and do some Repairds. 
 
