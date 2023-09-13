@@ -2,8 +2,7 @@
 
 ![Electrician (2)](https://user-images.githubusercontent.com/119653707/210658153-925288f2-dad6-4d57-b068-2e8e4007c088.png)
 
-![image-removebg-preview (4)](https://github.com/Ph-o-e-n-ix/esx_electricianjob/assets/119653707/a316af7d-1056-49f4-b987-a6cf2a83e8e9)
-https://discord.gg/CUXK7CWx3P
+![image-removebg-preview (4)][(https://github.com/Ph-o-e-n-ix/esx_electricianjob/assets/119653707/a316af7d-1056-49f4-b987-a6cf2a83e8e9](https://discord.gg/CUXK7CWx3P))
 
 
 Hey, This is a Script for an Electrician Job, that a Player allows to take a custom Car, go out with it and do some Repairds. 
