@@ -1,8 +1,11 @@
-local ESX = nil 
-
-TriggerEvent('esx:getSharedObject', function(obj) 
-	ESX = obj 
-end)
+if Config.UseNewESX then
+	ESX = exports["es_extended"]:getSharedObject()
+else 
+	local ESX = nil 
+	TriggerEvent('esx:getSharedObject', function(obj) 
+		ESX = obj 
+	end)
+end 
 
 RegisterServerEvent("electric:getmoney")
 AddEventHandler("electric:getmoney", function()
