@@ -2,6 +2,8 @@ Config = {}
 
 Config.Locale = 'de'
 
+Config.UseNewESX = true 
+
 Config.Account = 'money' -- 'bank' , 'black_money'
 
 Config.Reward = 1000 --The Reward for each Device you repaired
@@ -77,11 +79,9 @@ Config.MissionCoords = {
 	{  x = -609.5130, y = -1091.6191, z = 22.3248, h = 132.9999 },
 	{  x = 875.4760, y = -2092.6594, z = 30.5137, h = 175.3683 },
 	{  x = -32.9868, y = -1106.1160, z = 27.2744, h = 253.7646 },
-	{  x = 745.1517, y = -769.7960, z = 26.4455, h = 65.3190 }, 
 	{  x = -544.8131, y = -158.9713, z = 38.4763, h = 20.1898 },
 	{  x = -800.2009, y = -106.3099, z = 37.5652, h = 29.4009 },
 	{  x = -1231.0833, y = -327.7384, z = 37.4014, h = 26.7014 },
-	{  x = 244.2400, y = -726.9323, z = 44.6855, h = 69.6494 },
 }
 
 Translation = {
