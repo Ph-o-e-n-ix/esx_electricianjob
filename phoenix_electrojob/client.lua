@@ -1,13 +1,17 @@
-ESX = nil 
+if Config.UseNewESX then
+	ESX = exports["es_extended"]:getSharedObject()
+else 
+	ESX = nil 
 
-Citizen.CreateThread(function()
-	while ESX == nil do 
-		TriggerEvent('esx:getSharedObject', function(obj) 
-			ESX = obj 
-			Citizen.Wait(0)
-		end)
-	end
-end)
+	Citizen.CreateThread(function()
+		while ESX == nil do 
+			TriggerEvent('esx:getSharedObject', function(obj) 
+				ESX = obj 
+				Citizen.Wait(0)
+			end)
+		end
+	end)
+end
 
 function endjob()
 	DeleteEntity(vehicle)
