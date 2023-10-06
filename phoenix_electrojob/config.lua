@@ -2,7 +2,7 @@ Config = {}
 
 Config.Locale = 'de'
 
-Config.UseNewESX = true 
+Config.UseNewESX = true -- New ESX has a new Export. Enable if you need this
 
 Config.Account = 'money' -- 'bank' , 'black_money'
 
