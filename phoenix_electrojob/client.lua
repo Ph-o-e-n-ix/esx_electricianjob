@@ -52,8 +52,6 @@ Citizen.CreateThread(function()
 				end
 				if IsControlJustReleased(0, 38) then 
 					if not busy then 
-						ESX.TriggerServerCallback('phoenix_electric:hasjob', function(hasjob)
-							if hasjob then
 								busy = true
 								blipactive = false
 								Config.MSG(Translation[Config.Locale]['started_mission'])
@@ -253,10 +251,6 @@ Citizen.CreateThread(function()
 										end
 									end 
 								end)
-							else 
-								Config.MSG(Translation[Config.Locale]['dont_have_job'])
-							end
-						end)
 					else 
 						Config.MSG(Translation[Config.Locale]['already_startet_mission'])
 					end
