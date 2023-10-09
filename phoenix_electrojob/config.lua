@@ -12,7 +12,7 @@ Config.CarPlateName = 'ELECTRIC' -- The Name of the Vehicle Plate
 
 Config.Waittime = 5 -- The Wait Time in Seconds that the Player have to wait after Minigame
 
-Config.UseMiniGame = true -- https://github.com/utkuali/datacrack if you use this
+Config.UseMiniGame = true -- https://github.com/utkuali/datacrack if you use this and this https://github.com/mxlolshop/minigameFixWiring/
 
 Config.StartKey = 47 --G Key to start for Repairing the Device
 
