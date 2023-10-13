@@ -151,7 +151,7 @@ Citizen.CreateThread(function()
 														if IsControlJustReleased(0, Config.StartKey) then 
 															if step5 then
 																local distance2 = Vdist(missionvehiclecoords, results.x, results.y, results.z)
-																if distance2 < 15 then
+																if distance2 < 25 then
 																	shownotify2 = true
 																	FreezeEntityPosition(PlayerPedId(), true)
 																	SetEntityCoords(PlayerPedId(),results.x, results.y, results.z -1.0, true, false, false, false)
