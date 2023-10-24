@@ -132,6 +132,7 @@ Citizen.CreateThread(function()
 															ClearPedTasksImmediately(PlayerPedId())
 															toolkitprop = CreateObject(GetHashKey("imp_prop_tool_box_01a"), 0, 0, 0, true, true, true)
 															local prophand = AttachEntityToEntity(toolkitprop, playerPed, GetPedBoneIndex(playerPed, 28422), 0.3700, 0.0200, 0, 90.00, 0, -90.00, true, true, true, false, 1, true)
+															SetEntityNoCollisionEntity(toolkitprop, missionvehicle, false)
 															RequestAnimDict('move_weapon@jerrycan@generic')
 															while not HasAnimDictLoaded('move_weapon@jerrycan@generic') do 
 																Citizen.Wait(50)
@@ -320,4 +321,12 @@ function shownotify(msg)
 	AddTextComponentString(CurrentActionMsg)
 	DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 end 
+
+AddEventHandler('onResourceStop', function(ressourceName)
+    if(GetCurrentResourceName() == ressourceName) then  
+        DeleteVehicle(missionvehicle)
+		DeleteEntity(toolkitprop)
+		endjob()
+    end
+end)
 
