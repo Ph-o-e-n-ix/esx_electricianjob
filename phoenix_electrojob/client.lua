@@ -152,73 +152,117 @@ Citizen.CreateThread(function()
 														if IsControlJustReleased(0, Config.StartKey) then 
 															if step5 then
 																local distance2 = Vdist(missionvehiclecoords, results.x, results.y, results.z)
-																if distance2 < 25 then
+																if distance2 < 15 then
 																	shownotify2 = true
 																	FreezeEntityPosition(PlayerPedId(), true)
 																	SetEntityCoords(PlayerPedId(),results.x, results.y, results.z -1.0, true, false, false, false)
-																	SetEntityHeading(playerPed, results.h)
+																	SetEntityHeading(playerPed, results.w)
 																	DeleteEntity(toolkitprop)
-																	if Config.UseMiniGame and not inminigame then
+																	if Config.UseMiniGame.enable and not inminigame then
 																		inminigame = true
 																		local luck = math.random(100)
 																		if luck > 50 then 
 																			if inminigame then
-																				TriggerEvent("Mx::StartMinigameElectricCircuit", '50%', '100%', '0.8', '30vmin', '1.ogg', function(mist)
-																					if Callback == mist then
-																						if inminigame then
-																							--Citizen.Wait(5000)
-																							TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_WELDING', 0, true)
-																							Citizen.Wait(Config.Waittime * 1000)
-																							ClearPedTasks(playerPed)
-																							Config.MSG(Translation[Config.Locale]['successfully_repaired'])
-																							RemoveBlip(missionblip)
-																							step1 = false
-																							busy3 = false
-																							step5 = false
-																							blipactive = false
+																				if GetResourceState("mx_fixwiring") == "started"  and Config.UseMiniGame.fixwiring then
+																					TriggerEvent("Mx::StartMinigameElectricCircuit", '50%', '100%', '0.8', '30vmin', '1.ogg', function(mist)
+																						if Callback == mist then
+																							if inminigame then
+																								--Citizen.Wait(5000)
+																								TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_WELDING', 0, true)
+																								Citizen.Wait(Config.Waittime * 1000)
+																								ClearPedTasks(playerPed)
+																								Config.MSG(Translation[Config.Locale]['successfully_repaired'])
+																								print("case1")
+																								RemoveBlip(missionblip)
+																								step1 = false
+																								busy3 = false
+																								step5 = false
+																								blipactive = false
+																								FreezeEntityPosition(PlayerPedId(), false)
+																								Citizen.Wait(1500)
+																								TriggerServerEvent("electric:getmoney")
+																								showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
+																								shownotify2 = false
+																								inminigame = false
+																							end
+																						else
+																							Config.MSG(Translation[Config.Locale]['failed_minigame'])
 																							FreezeEntityPosition(PlayerPedId(), false)
-																							Citizen.Wait(1500)
-																							TriggerServerEvent("electric:getmoney")
-																							showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
-																							shownotify2 = false
 																							inminigame = false
 																						end
-																					else
-																						Config.MSG(Translation[Config.Locale]['failed_minigame'])
-																						FreezeEntityPosition(PlayerPedId(), false)
-																						inminigame = false
-																					end
-																				end)
+																					end)
+																				else 
+																					--print("MINIGAME: MX_FIXWIRING NOT STARTED!")
+																					Citizen.Wait(500)
+																					TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+																					Citizen.Wait(Config.Waittime * 1000)
+																					ClearPedTasks(playerPed)
+																					Config.MSG(Translation[Config.Locale]['successfully_repaired'])
+																					print("case2")
+																					RemoveBlip(missionblip)
+																					step1 = false
+																					busy3 = false
+																					step5 = false
+																					blipactive = false
+																					FreezeEntityPosition(PlayerPedId(), false)
+																					Citizen.Wait(1500)
+																					TriggerServerEvent("electric:getmoney")
+																					showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
+																					shownotify2 = false
+																					inminigame = false
+																				end
 																			end
 																		else 
 																			if inminigame then
-																				TriggerEvent("datacrack:start", 3, function(output)
-																					if output == true then
-																						if inminigame then
-																							DeleteEntity(toolkitprop)
-																							Citizen.Wait(500)
-																							TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-																							Citizen.Wait(Config.Waittime * 1000)
-																							ClearPedTasks(playerPed)
-																							Config.MSG(Translation[Config.Locale]['successfully_repaired'])
-																							RemoveBlip(missionblip)
-																							step1 = false
-																							busy3 = false
-																							step5 = false
-																							blipactive = false
+																				if GetResourceState("datacrack") == "started" and Config.UseMiniGame.datacrack then
+																					TriggerEvent("datacrack:start", 3, function(output)
+																						if output == true then
+																							if inminigame then
+																								DeleteEntity(toolkitprop)
+																								Citizen.Wait(500)
+																								TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+																								Citizen.Wait(Config.Waittime * 1000)
+																								ClearPedTasks(playerPed)
+																								Config.MSG(Translation[Config.Locale]['successfully_repaired'])
+																								print("case3")
+																								RemoveBlip(missionblip)
+																								step1 = false
+																								busy3 = false
+																								step5 = false
+																								blipactive = false
+																								FreezeEntityPosition(PlayerPedId(), false)
+																								Citizen.Wait(1500)
+																								TriggerServerEvent("electric:getmoney")
+																								showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
+																								shownotify2 = false
+																								inminigame = false
+																							end
+																						else
+																							Config.MSG(Translation[Config.Locale]['failed_minigame'])
 																							FreezeEntityPosition(PlayerPedId(), false)
-																							Citizen.Wait(1500)
-																							TriggerServerEvent("electric:getmoney")
-																							showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
-																							shownotify2 = false
 																							inminigame = false
 																						end
-																					else
-																						Config.MSG(Translation[Config.Locale]['failed_minigame'])
-																						FreezeEntityPosition(PlayerPedId(), false)
-																						inminigame = false
-																					end
-																				end)
+																					end)
+																				else 
+																					--print("MINIGAME: DATACRACK NOT STARTED!")
+																					Citizen.Wait(500)
+																					TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+																					Citizen.Wait(Config.Waittime * 1000)
+																					ClearPedTasks(playerPed)
+																					Config.MSG(Translation[Config.Locale]['successfully_repaired'])
+																					print("case4")
+																					RemoveBlip(missionblip)
+																					step1 = false
+																					busy3 = false
+																					step5 = false
+																					blipactive = false
+																					FreezeEntityPosition(PlayerPedId(), false)
+																					Citizen.Wait(1500)
+																					TriggerServerEvent("electric:getmoney")
+																					showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
+																					shownotify2 = false
+																					inminigame = false
+																				end
 																			end
 																		end
 																	else 
@@ -237,6 +281,7 @@ Citizen.CreateThread(function()
 																		TriggerServerEvent("electric:getmoney")
 																		showPictureNotification(Translation[Config.Locale]['img'], Translation[Config.Locale]['message'], Translation[Config.Locale]['title'], Translation[Config.Locale]['subtitle'])
 																		shownotify2 = false
+																		inminigame = false
 																	end
 
 																else 
