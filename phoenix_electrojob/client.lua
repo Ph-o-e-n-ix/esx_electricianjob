@@ -326,6 +326,15 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(0)
+		if busy and DoesEntityExist(toolkitprop) then 
+			SetEntityNoCollisionEntity(toolkitprop, GetVehiclePedIsIn(PlayerPedId(), false), false)
+		end
+	end
+end)
+
+Citizen.CreateThread(function()
 	for k, v in pairs(Config.StartCoords) do 		
 		local kartenblip = AddBlipForCoord(v.start.x, v.start.y, v.start.z)
 		SetBlipSprite(kartenblip, 620)
